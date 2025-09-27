@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.personajes-container {
+  display: flex;
+  height: 100vh; /* que ocupe toda la pantalla */
+}
+
+/* --- Columna izquierda --- */
+/* --- Columna izquierda detallada --- */
+.columna.izquierda {
+  width: 20%;
+  background-color: #2a2a2a;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-origen {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 8px;
+}
+
+.btn-random {
+  margin: 0 auto 20px auto;
+  padding: 8px 12px;
+  background-color: #444;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-random:hover {
+  background-color: #666;
+}
+
+.lista-origen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto; /* por si hay muchos personajes */
+}
+
+.personaje-opcion {
+  text-align: center;
+  background-color: #3a3a3a;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+}
+
+.personaje-opcion:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.personaje-opcion img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 6px;
+  border: 2px solid #777;
+}
+
+.personaje-opcion p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+
+/* --- Columna centro --- */
+.columna.centro {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("img/fondo.jpg"); /* puedes poner un paisaje */
+  background-size: cover;
+  background-position: center;
+}
+
+.modelo-personaje img {
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/* --- Columna derecha --- */
+.columna.derecha {
+  width: 25%;
+  background-color: #2a2a2a;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.columna.derecha h2, 
+.columna.derecha h3 {
+  margin-top: 0;
+}
+
+.columna.derecha ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.columna.derecha li {
+  background-color: #3a3a3a;
+  margin-bottom: 5px;
+  padding: 6px;
+  border-radius: 6px;
+}

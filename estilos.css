@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 120px;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.titulo img {
+    width: 200px;
+    height: 150px;
+}
+
+.p2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+    padding: 10px;
+}
+
+.opciones {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+}
+
+.buy {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.buy img {
+    width: 110px;
+    height: 70px;
+}
+
+.buy p {
+    position: absolute;
+    font-family: "Uncial Antiqua", serif;
+}
+
+.menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu img {
+    width: 100px;
+    height: 70px;
+}
+
+.videopart {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      object-fit: cover;
+}
+
+.videopart video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.vidconte {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.contenido {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn {
+  background: linear-gradient(180deg, #5a3620, #3b2415); /* Fondo marrón medieval */
+  color: #f5f0e6; /* Texto claro */
+  font-family: 'Uncial Antiqua', serif; /* Fuente medieval */
+  font-size: 20px;
+  padding: 12px 40px;
+  border: 2px solid #d4af37; /* Dorado */
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
+
+.btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px; 
+  border: 2px solid #d4af37;
+  background: #3b2415;
+}
+
+.btn::before {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.btn::after {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Hover efecto */
+.btn:hover {
+  background: linear-gradient(180deg, #7a482c, #4a2d1a);
+  border-color: #ffcc66;
+  color: #fff3d4;
+  box-shadow: 0 0 15px rgba(255, 200, 100, 0.8);
+}
+@keyframes fuego {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+button.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button.btn a{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
