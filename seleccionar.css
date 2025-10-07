@@ -14,6 +14,8 @@ html, body {
 .container {
   display: flex;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 /* --- SECCIONES --- */
@@ -25,13 +27,21 @@ html, body {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  transition: flex 0.6s ease, transform 0.5s ease;
+  transition: all 0.8s ease;
   border: 1px solid rgba(255,255,255,0.05);
+  z-index: 1;
 }
 
+/* --- EFECTO: solo se expande mientras el cursor esté DENTRO de esa parte --- */
 .side:hover {
-  flex: 1.2;
-  transform: scale(1.02);
+  flex: 1.8;
+  z-index: 2;
+}
+
+/* el otro lado se reduce pero NO desaparece completamente */
+.container:hover .side:not(:hover) {
+  flex: 0.7;
+  opacity: 0.7;
 }
 
 /* --- VIDEOS --- */
@@ -58,25 +68,19 @@ html, body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  transition: opacity 0.6s ease, transform 0.5s ease;
+  transition: opacity 0.6s ease;
 }
 
-/* KAYN HUMANO - tonos azulados */
 .good::before {
-  background: radial-gradient(circle at center, rgba(0, 150, 255, 0.4), rgba(0, 0, 40, 0.9));
-  box-shadow: inset 0 0 80px rgba(0, 170, 255, 0.4);
+  background: radial-gradient(circle at center, rgba(0, 150, 255, 0.3), rgba(0, 0, 40, 0.9));
 }
 
-/* RHAAST - tonos rojos oscuros */
 .evil::before {
-  background: radial-gradient(circle at center, rgba(255, 30, 30, 0.4), rgba(40, 0, 0, 0.9));
-  box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.3);
+  background: radial-gradient(circle at center, rgba(160, 0, 40, 0.4), rgba(15, 0, 10, 0.9));
 }
 
-/* Hover ilumina más */
 .side:hover::before {
   opacity: 0.2;
-  transform: scale(1.05);
 }
 
 /* --- TEXTO --- */
@@ -102,13 +106,12 @@ html, body {
   letter-spacing: 1px;
 }
 
-/* Animación al hover */
 .side:hover .overlay {
   transform: scale(1.05);
   opacity: 1;
 }
 
-/* --- EFECTO LÍNEA DIVISORIA CENTRAL --- */
+/* --- LÍNEA CENTRAL --- */
 .container::before {
   content: "";
   position: absolute;
@@ -116,12 +119,5 @@ html, body {
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
   z-index: 10;
-}
-.side-link {
-  flex: 1;
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }
