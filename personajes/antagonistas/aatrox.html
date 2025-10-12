@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AAtrox</title>
-  <style>
+  <title>Antagonistas - Selección</title>
+  <link rel="stylesheet" href="antagonistas.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <h2>Antagonistas</h2>
+    <div class="char-list">
+      <div class="char">Aatrox</div>
+      <div class="char">Mordekaiser</div>
+      <div class="char">Viego</div>
+      <div class="char">Zed</div>
+      <div class="char">Shyvana</div>
+    </div>
+    <a href="../../seleccionar.html"><button class="play-btn">Atrás</button></a>
+  </aside>
+
+  <div class="main">
+    <video autoplay muted loop>
+      <source src="../../videos/aatrox.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+  </div>
+
+  <aside class="stats-panel">
+    <div class="stats">
+      <h3>Asesino de las Sombras</h3>
+      <p>Kayn lucha por dominar el arma demoníaca que porta, Rhaast. Su destino decidirá si prevalece el orden o la
+        destrucción total.</p>
+
+      <h3>Poder</h3>
+      <div class="stat-bar">
+        <div class="stat-fill" style="width: 90%;"></div>
+      </div>
+
+      <h3>Velocidad</h3>
+      <div class="stat-bar">
+        <div class="stat-fill" style="width: 75%;"></div>
+      </div>
+
+      <h3>Dificultad</h3>
+      <div class="stat-bar">
+        <div class="stat-fill" style="width: 85%;"></div>
+      </div>
+    </div>
+
+    <button class="play-btn">JUGAR</button>
+  </aside>
+    <style>
+    /* --- ESTRUCTURA GENERAL --- */
     * {
       margin: 0;
       padding: 0;
@@ -12,144 +61,163 @@
     }
 
     body {
-      display: flex;
       height: 100vh;
-      background-color: #0a0a0a;
+      display: flex;
+      background-color: #0a0a0f;
       color: white;
       font-family: 'Poppins', sans-serif;
-    }
-
-    /* Barra izquierda */
-    .sidebar {
-      width: 15%;
-      background: linear-gradient(to bottom, #111, #222);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      border-right: 1px solid #333;
-    }
-
-    .sidebar h2 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .champion-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .champion {
-      background: #222;
-      padding: 0.8rem;
-      text-align: center;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .champion:hover {
-      background: #444;
-      transform: scale(1.05);
-    }
-
-    /* Zona central con video */
-    .center {
-      flex: 1;
-      position: relative;
       overflow: hidden;
     }
 
-    video {
+    /* --- BARRA IZQUIERDA: PERSONAJES --- */
+    .sidebar {
+      width: 18%;
+      background: linear-gradient(180deg, #120101, #2b0000);
+      border-right: 2px solid rgba(255, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 2rem 0;
+      overflow-y: auto;
+      justify-content: space-between;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ff4b4b;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+
+    .char-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5.2rem;
+      width: 100%;
+      align-items: center;
+    }
+
+    .char {
+      width: 80%;
+      background: rgba(255, 0, 0, 0.08);
+      padding: 25px 0;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .char:hover {
+      background: rgba(255, 0, 0, 0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    }
+
+    /* --- SECCIÓN CENTRAL: VIDEO / SPLASH --- */
+    .main {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .main video {
+      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
     }
 
-    .overlay {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
+    .main h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
 
-    .overlay h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: #c41e3a;
-    }
-
-    /* Panel derecho de estadísticas */
-    .stats {
+    /* --- PANEL DERECHO: DETALLES --- */
+    .stats-panel {
       width: 25%;
-      background: linear-gradient(to bottom, #111, #181818);
-      padding: 2rem;
-      border-left: 1px solid #333;
+      background: linear-gradient(180deg, #1a0000, #2e0000);
+      border-left: 2px solid rgba(255, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .stats {
+      margin-bottom: auto;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      height: 100%;
+      justify-content: space-evenly;
     }
 
     .stats h3 {
-      font-size: 1.5rem;
-      color: #c41e3a;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #ff4b4b;
     }
 
     .stats p {
-      line-height: 1.6;
-      font-size: 0.95rem;
-      color: #ddd;
+      font-size: 1rem;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .stat-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .stat-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff0000, #ff4b1f);
+    }
+
+    /* --- BOTÓN "JUGAR" --- */
+    .play-btn {
+      align-self: center;
+      margin-top: 2rem;
+      background: linear-gradient(45deg, #ff0000, #ff4b1f);
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
+      transition: all 0.4s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 80, 80, 0.9);
+      background: linear-gradient(45deg, #ff2b2b, #ff6a3d);
+    }
+
+    .play-btn:active {
+      transform: scale(0.95);
     }
   </style>
-</head>
-<body>
-  <!-- Barra izquierda -->
-  <aside class="sidebar">
-    <h2>Antagonistas</h2>
-    <div class="champion-list">
-      <a href="kayn.html" class="champion">Kayn</a>
-      <a href="zed.html" class="champion">Zed</a>
-      <a href="morgana.html" class="champion">Morgana</a>
-      <a href="darius.html" class="champion">Darius</a>
-      <a href="evelynn.html" class="champion">Evelynn</a>
-    </div>
-  </aside>
-
-  <!-- Zona central -->
-  <div class="center">
-    <video autoplay muted loop>
-      <source src="kayn.mp4" type="video/mp4">
-      Tu navegador no soporta videos.
-    </video>
-    <div class="overlay">
-      <h1>Kayn</h1>
-      <p>El Segador de Sombras</p>
-    </div>
-  </div>
-
-  <!-- Panel derecho -->
-  <aside class="stats">
-    <h3>Estadísticas</h3>
-    <p><strong>Rol:</strong> Asesino / Luchador</p>
-    <p><strong>Dificultad:</strong> Alta</p>
-    <p><strong>Daño:</strong> 9/10</p>
-    <p><strong>Movilidad:</strong> 8/10</p>
-    <p><strong>Resistencia:</strong> 5/10</p>
-    <br>
-    <h3>Descripción</h3>
-    <p>
-      Kayn, el Segador de Sombras, empuña un arma sentiente que lucha por el control de su cuerpo.
-      Puede sucumbir ante la corrupción del Darkin Rhaast o dominarla para convertirse en el Asesino de Sombras.
-    </p>
-  </aside>
 </body>
+
 </html>

@@ -18,7 +18,6 @@ html, body {
   overflow: hidden;
 }
 
-/* --- SECCIONES --- */
 .side {
   flex: 1;
   position: relative;
@@ -32,19 +31,19 @@ html, body {
   z-index: 1;
 }
 
-/* --- EFECTO: solo se expande mientras el cursor esté DENTRO de esa parte --- */
+
 .side:hover {
   flex: 1.8;
   z-index: 2;
 }
 
-/* el otro lado se reduce pero NO desaparece completamente */
+
 .container:hover .side:not(:hover) {
   flex: 0.7;
   opacity: 0.7;
 }
 
-/* --- VIDEOS --- */
+
 .bg-video {
   position: absolute;
   top: 0;
@@ -61,7 +60,7 @@ html, body {
   opacity: 1;
 }
 
-/* --- COLORES DE CADA LADO --- */
+
 .good::before,
 .evil::before {
   content: "";
@@ -83,7 +82,7 @@ html, body {
   opacity: 0.2;
 }
 
-/* --- TEXTO --- */
+
 .overlay {
   position: relative;
   z-index: 2;
@@ -111,7 +110,7 @@ html, body {
   opacity: 1;
 }
 
-/* --- LÍNEA CENTRAL --- */
+
 .container::before {
   content: "";
   position: absolute;
