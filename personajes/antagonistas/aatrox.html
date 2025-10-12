@@ -26,34 +26,43 @@
       <source src="../../videos/aatrox.mp4" type="video/mp4">
       Tu navegador no soporta videos.
     </video>
+    <div class="nombre">
+      <img src="../../index_im/aatrox-nombre.png" alt="">
+    </div>
   </div>
 
   <aside class="stats-panel">
     <div class="stats">
-      <h3>Asesino de las Sombras</h3>
+      <h3 style="text-align: center;">Asesino de las Sombras</h3>
       <p>Kayn lucha por dominar el arma demoníaca que porta, Rhaast. Su destino decidirá si prevalece el orden o la
         destrucción total.</p>
-
+      <div class="barras">
       <h3>Poder</h3>
+      <h2>90</h2>
       <div class="stat-bar">
         <div class="stat-fill" style="width: 90%;"></div>
       </div>
-
+      </div>
+      <div class="barras">
       <h3>Velocidad</h3>
+      <h2>75</h2>
       <div class="stat-bar">
         <div class="stat-fill" style="width: 75%;"></div>
       </div>
-
+      </div>
+      <div class="barras">
       <h3>Dificultad</h3>
+      <h2>85</h2>
       <div class="stat-bar">
         <div class="stat-fill" style="width: 85%;"></div>
+      </div>
       </div>
     </div>
 
     <button class="play-btn">JUGAR</button>
   </aside>
     <style>
-    /* --- ESTRUCTURA GENERAL --- */
+
     * {
       margin: 0;
       padding: 0;
@@ -69,7 +78,7 @@
       overflow: hidden;
     }
 
-    /* --- BARRA IZQUIERDA: PERSONAJES --- */
+
     .sidebar {
       width: 18%;
       background: linear-gradient(180deg, #120101, #2b0000);
@@ -103,6 +112,7 @@
     .char {
       width: 80%;
       background: rgba(255, 0, 0, 0.08);
+      background-color: #6a1313;
       padding: 25px 0;
       text-align: center;
       border-radius: 8px;
@@ -117,13 +127,12 @@
       box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
     }
 
-    /* --- SECCIÓN CENTRAL: VIDEO / SPLASH --- */
     .main {
       flex: 1;
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: end;
       overflow: hidden;
     }
 
@@ -144,7 +153,7 @@
       text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     }
 
-    /* --- PANEL DERECHO: DETALLES --- */
+
     .stats-panel {
       width: 25%;
       background: linear-gradient(180deg, #1a0000, #2e0000);
@@ -190,9 +199,7 @@
       background: linear-gradient(90deg, #ff0000, #ff4b1f);
     }
 
-    /* --- BOTÓN "JUGAR" --- */
     .play-btn {
-      align-self: center;
       margin-top: 2rem;
       background: linear-gradient(45deg, #ff0000, #ff4b1f);
       color: #fff;
@@ -216,6 +223,13 @@
 
     .play-btn:active {
       transform: scale(0.95);
+    }
+    .nombre{
+      z-index: 1;
+    }
+    .nombre img{
+      width: 750px;
+      height: 300px;
     }
   </style>
 </body>
