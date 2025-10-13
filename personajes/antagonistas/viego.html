@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antagonistas - Selección</title>
+  <link rel="stylesheet" href="antagonistas.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <h2>Antagonistas</h2>
+    <div class="char-list">
+      <div class="char"><a class="btonperso" href="aatrox.html"></a>Aatrox</div>
+      <div class="char"><a class="btonperso" href="mordekaiser.html"></a>Mordekaiser</div>
+      <div class="char"><a class="btonperso" href="viego.html"></a>Viego</div>
+      <div class="char"><a class="btonperso" href="zed.html"></a>Zed</div>
+      <div class="char"><a class="btonperso" href="shyvana.html"></a>Shyvana</div>
+    </div>
+    <a href="../../seleccionar.html"><button class="play-btn">Atrás</button></a>
+  </aside>
+
+  <div class="main">
+    <video autoplay muted loop>
+      <source src="../../videos/viego trono.mp4" type="video/mp4">
+      Tu navegador no soporta videos.
+    </video>
+    <div class="nombre">
+      <img src="../../index_im/viego.png" alt="">
+    </div>
+  </div>
+
+  <aside class="stats-panel">
+    <div class="stats">
+      <h3 style="text-align: center;">Asesino de las Sombras</h3>
+      <p>Kayn lucha por dominar el arma demoníaca que porta, Rhaast. Su destino decidirá si prevalece el orden o la
+        destrucción total.</p>
+
+      <div class="barras">
+        <h3>Poder</h3>
+        <h2>90</h2>
+        <div class="stat-bar">
+          <div class="stat-fill" style="width: 90%;"></div>
+        </div>
+      </div>
+
+      <div class="barras">
+        <h3>Velocidad</h3>
+        <h2>75</h2>
+        <div class="stat-bar">
+          <div class="stat-fill" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="barras">
+        <h3>Dificultad</h3>
+        <h2>85</h2>
+        <div class="stat-bar">
+          <div class="stat-fill" style="width: 85%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <button class="play-btn">JUGAR</button>
+  </aside>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      background-color: #020806;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* --- SIDEBAR --- */
+    .sidebar {
+      width: 18%;
+      background: linear-gradient(180deg, #00100b, #003322);
+      border-right: 2px solid rgba(0, 255, 170, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00ffb3;
+      text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+    }
+
+    .char-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5.2rem;
+      width: 100%;
+      align-items: center;
+    }
+
+    .char {
+      width: 80%;
+      background: rgba(0, 255, 150, 0.08);
+      background-color: #0c3a2a;
+      padding: 25px 0;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ccffe8;
+    }
+
+    .btonperso {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .char:hover {
+      background: rgba(0, 255, 150, 0.25);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+    }
+
+    /* --- MAIN --- */
+    .main {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      overflow: hidden;
+    }
+
+    .main video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1) saturate(1.2);
+    }
+
+    .nombre {
+      z-index: 1;
+    }
+
+    .nombre img {
+      width: 750px;
+      height: 300px;
+      filter: drop-shadow(0 0 25px rgba(0, 255, 150, 0.7));
+    }
+
+    /* --- STATS PANEL --- */
+    .stats-panel {
+      width: 25%;
+      background: linear-gradient(180deg, #001d14, #003326);
+      border-left: 2px solid rgba(0, 255, 150, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+    .stats h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #00ffb3;
+    }
+
+    .stats p {
+      font-size: 1rem;
+      opacity: 0.85;
+      line-height: 1.5;
+      color: #b9ffe4;
+    }
+
+    .stat-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .stat-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00ffb3, #00cc88);
+      box-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
+    }
+
+    /* --- BOTONES --- */
+    .play-btn {
+      margin-top: 2rem;
+      background: linear-gradient(45deg, #00ffb3, #00cc88);
+      color: #fff;
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.6);
+      transition: all 0.4s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(0, 255, 200, 0.9);
+      background: linear-gradient(45deg, #00ffa6, #00ffcc);
+    }
+
+    .play-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</body>
+
+</html>

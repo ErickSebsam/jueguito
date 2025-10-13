@@ -12,11 +12,11 @@
   <aside class="sidebar">
     <h2>Antagonistas</h2>
     <div class="char-list">
-      <div class="char">Aatrox</div>
-      <div class="char">Mordekaiser</div>
-      <div class="char">Viego</div>
-      <div class="char">Zed</div>
-      <div class="char">Shyvana</div>
+      <div class="char"><a class="btonperso" href="aatrox.html"></a>Aatrox</div>
+      <div class="char"><a class="btonperso" href="mordekaiser.html"></a>Mordekaiser</div>
+      <div class="char"><a class="btonperso" href="viego.html"></a>Viego</div>
+      <div class="char"><a class="btonperso" href="zed.html"></a>Zed</div>
+      <div class="char"><a class="btonperso" href="shyvana.html"></a>Shyvana</div>
     </div>
     <a href="../../seleccionar.html"><button class="play-btn">Atrás</button></a>
   </aside>
@@ -119,8 +119,16 @@
       cursor: pointer;
       transition: all 0.3s ease;
       font-weight: 500;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
+    .btonperso{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
     .char:hover {
       background: rgba(255, 0, 0, 0.25);
       transform: scale(1.05);
