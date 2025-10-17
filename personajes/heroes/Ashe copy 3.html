@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heroes - Selección</title>
+  <title>Antagonistas - Selección</title>
+  <link rel="stylesheet" href="antagonistas.css">
 </head>
 
 <body>
   <aside class="sidebar">
-    <h2>Heroes</h2>
+    <h2>Antagonistas</h2>
     <div class="char-list">
       <div class="char"><a class="btonperso" href="Ashe.html"></a>Ashe</div>
       <div class="char"><a class="btonperso" href="Ezreal.html"></a>Ezreal</div>
@@ -22,40 +23,38 @@
 
   <div class="main">
     <video autoplay muted loop>
-      <source src="../../videos/ezreal.mp4" type="video/mp4">
+      <source src="../../videos/ashe.mp4" type="video/mp4">
       Tu navegador no soporta videos.
     </video>
     <div class="nombre">
-      <img src="../../index_im/Ezreal.png" alt="">
     </div>
-    
   </div>
 
   <aside class="stats-panel">
     <div class="stats">
-      <h3 style="text-align: center;">El Explorador Prodigio</h3>
-      <p>Ezreal es un aventurero temerario que canaliza energía mágica ancestral con su guante místico. Su curiosidad y
-        confianza ilimitada lo han llevado a descubrir secretos olvidados... y a provocar catástrofes igual de
-        legendarias.</p>
+      <h3 style="text-align: center;">El Destructor de Mundos</h3>
+      <p>Aatrox fue uno de los legendarios guerreros ascendidos de Shurima, transformado por su sed de poder en un ser
+        de pura destrucción. Tras siglos atrapado en su espada, logró liberarse para continuar su cruzada contra la vida
+        misma. Cada golpe de su hoja carmesí trae consigo la promesa del fin y la desesperación total.</p>
       <div class="barras">
         <h3>Poder</h3>
-        <h2>85</h2>
+        <h2>97</h2>
         <div class="stat-bar">
-          <div class="stat-fill" style="width: 85%;"></div>
+          <div class="stat-fill" style="width: 97%;"></div>
         </div>
       </div>
       <div class="barras">
         <h3>Velocidad</h3>
-        <h2>95</h2>
+        <h2>65</h2>
         <div class="stat-bar">
-          <div class="stat-fill" style="width: 95%;"></div>
+          <div class="stat-fill" style="width: 65%;"></div>
         </div>
       </div>
       <div class="barras">
         <h3>Dificultad</h3>
-        <h2>80</h2>
+        <h2>85</h2>
         <div class="stat-bar">
-          <div class="stat-fill" style="width: 80%;"></div>
+          <div class="stat-fill" style="width: 85%;"></div>
         </div>
       </div>
     </div>
@@ -73,16 +72,16 @@
     body {
       height: 100vh;
       display: flex;
-      background-color: #0a0d12;
-      color: white;
+      background-color: #0b0910;
+      color: #e6e6e6;
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
     }
 
     .sidebar {
       width: 18%;
-      background: linear-gradient(180deg, #0b1824, #071018);
-      border-right: 2px solid rgba(0, 225, 255, 0.2);
+      background: linear-gradient(180deg, #0d0a11, #1c1526);
+      border-right: 2px solid rgba(180, 160, 255, 0.15);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -95,8 +94,8 @@
       font-size: 1.4rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #00e0ff;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      color: #c5a6ff;
+      text-shadow: 0 0 10px rgba(197, 166, 255, 0.4);
     }
 
     .char-list {
@@ -109,8 +108,8 @@
 
     .char {
       width: 80%;
-      background: rgba(0, 225, 255, 0.08);
-      background-color: #0f3340;
+      background: rgba(197, 166, 255, 0.08);
+      background-color: #372a4e;
       padding: 25px 0;
       text-align: center;
       border-radius: 8px;
@@ -121,7 +120,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #cdefff;
+      color: #e6e0ff;
     }
 
     .btonperso {
@@ -131,10 +130,10 @@
     }
 
     .char:hover {
-      background: rgba(0, 255, 255, 0.25);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-      color: #00e0ff;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      background: rgba(201, 179, 111, 0.25);
+      box-shadow: 0 0 15px rgba(240, 220, 154, 0.6);
+      color: #f0dc9a;
+      text-shadow: 0 0 10px rgba(240, 220, 154, 0.6);
       transform: scale(1.05);
     }
 
@@ -152,13 +151,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.8) contrast(1.1) saturate(1.1);
+      filter: brightness(0.7) contrast(1.1);
     }
 
     .stats-panel {
       width: 25%;
-      background: linear-gradient(180deg, #0a1925, #08202b);
-      border-left: 2px solid rgba(0, 255, 255, 0.15);
+      background: linear-gradient(180deg, #151020, #251d36);
+      border-left: 2px solid rgba(180, 160, 255, 0.15);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -178,19 +177,18 @@
     .stats h3 {
       font-size: 1.6rem;
       margin-bottom: 0.5rem;
-      color: #00e0ff;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+      color: #c9b36f;
     }
 
     .stats p {
       font-size: 1rem;
       opacity: 0.9;
       line-height: 1.5;
-      color: #e0faff;
+      color: #e6e6e6;
     }
 
     .stat-bar {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 8px;
       margin-top: 0.5rem;
       height: 8px;
@@ -199,15 +197,14 @@
 
     .stat-fill {
       height: 100%;
-      background: linear-gradient(90deg, #00bfff, #00ffe1);
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+      background: linear-gradient(90deg, #c9b36f, #f0dc9a);
     }
 
     .play-btn {
       display: inline-block;
-      background: linear-gradient(45deg, #00bfff, #00ffe1);
-      color: #012531;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+      background: linear-gradient(45deg, #c9b36f, #f0dc9a);
+      color: #1c1526;
+      box-shadow: 0 0 25px rgba(240, 220, 154, 0.5);
       animation: pulseGlow 2.5s ease-in-out infinite;
       transition: all 0.3s ease;
       border: none;
@@ -221,8 +218,8 @@
     }
 
     .play-btn:hover {
-      box-shadow: 0 0 45px rgba(0, 255, 255, 0.9);
-      background: linear-gradient(45deg, #00ffe1, #c3fff6);
+      box-shadow: 0 0 45px rgba(240, 220, 154, 0.9);
+      background: linear-gradient(45deg, #f0dc9a, #fff1c5);
       transform: scale(1.08);
     }
 
@@ -232,25 +229,16 @@
 
     @keyframes pulseGlow {
       0% {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        box-shadow: 0 0 20px rgba(240, 220, 154, 0.4);
       }
 
       50% {
-        box-shadow: 0 0 45px rgba(0, 255, 255, 0.8);
+        box-shadow: 0 0 45px rgba(240, 220, 154, 0.8);
       }
 
       100% {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        box-shadow: 0 0 20px rgba(240, 220, 154, 0.4);
       }
-    }
-
-    .nombre {
-      z-index: 1;
-    }
-
-    .nombre img{
-      width: 750px;
-      height: 300px;
     }
   </style>
 </body>
