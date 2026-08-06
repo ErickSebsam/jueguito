@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Héroes - Kayle</title>
   <link rel="stylesheet" href="antagonistas.css">
+
+  <!-- IMPORTACIÓN DE FUENTES TEMÁTICAS (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,7 +40,7 @@
   <aside class="stats-panel">
     <div class="stats">
       <h3 style="text-align: center;">La Justiciera del Alba</h3>
-      <p>
+      <p class="description">
         Kayle, la Justiciera, ascendió más allá de lo mortal y se convirtió en un símbolo de justicia divina. 
         Empuñando su espada celestial, castiga a los impuros y guía a los justos con fuego sagrado. 
         Su brillo es tanto una promesa de redención como una advertencia del juicio que se avecina.
@@ -68,6 +74,8 @@
     <button class="play-btn">JUGAR</button>
   </aside>
 
+  
+  
   <style>
     * {
       margin: 0;
@@ -78,56 +86,62 @@
     body {
       height: 100vh;
       display: flex;
-      background-color: #0b0c13;
-      color: #f0f0f0;
-      font-family: 'Poppins', sans-serif;
+      background-color: #100d13;
+      color: white;
+      font-family: 'Rajdhani', sans-serif;
       overflow: hidden;
     }
 
-    /* ===== Sidebar ===== */
+    /* --- SIDEBAR --- */
     .sidebar {
       width: 18%;
-      background: linear-gradient(180deg, #10131f, #1a2133);
-      border-right: 2px solid rgba(255, 240, 200, 0.2);
+      background: linear-gradient(180deg, #15101a, #2a1f2d);
+      border-right: 2px solid rgba(255, 210, 120, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem 0;
     }
 
     .sidebar h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e8d78e;
-      text-shadow: 0 0 10px rgba(255, 238, 169, 0.5);
+      letter-spacing: 3px;
+      color: #ffd77f;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     .char-list {
       display: flex;
       flex-direction: column;
-      gap: 5.2rem;
+      gap: 3.5rem;
       width: 100%;
       align-items: center;
     }
 
     .char {
       width: 80%;
-      background: rgba(255, 255, 255, 0.08);
-      background-color: #2e3245;
-      padding: 25px 0;
+      background-color: #3a321d;
+      padding: 18px 0;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 500;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #f5f5f5;
+      color: #ffd77f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .btonperso {
@@ -137,124 +151,147 @@
     }
 
     .char:hover {
-      background: rgba(255, 215, 120, 0.25);
-      box-shadow: 0 0 20px rgba(255, 234, 150, 0.6);
-      color: #ffe38a;
-      text-shadow: 0 0 10px rgba(255, 234, 150, 0.8);
+      background: rgba(255, 215, 127, 0.25);
       transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 215, 127, 0.5);
+      border-color: #ffd77f;
+      color: #ffffff;
     }
 
-    /* ===== Video ===== */
+    /* --- MAIN --- */
     .main {
       flex: 1;
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: end;
+      align-items: flex-end;
       overflow: hidden;
     }
 
-    .main video {
+    .main video, .main .bg-hero {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.8) contrast(1.1) saturate(1.2);
+      filter: brightness(0.8) contrast(1.1) saturate(1.1);
     }
 
     .nombre {
       z-index: 1;
     }
 
-    /* ===== Stats Panel ===== */
+    .nombre img {
+      width: 750px;
+      height: 300px;
+      filter: drop-shadow(0 0 25px rgba(255, 215, 127, 0.5));
+    }
+
+    /* --- STATS PANEL --- */
     .stats-panel {
       width: 25%;
-      background: linear-gradient(180deg, rgba(20, 22, 35, 0.95), rgba(40, 32, 65, 0.9));
-      border-left: 2px solid rgba(255, 240, 200, 0.2);
+      background: linear-gradient(180deg, #171116, #2e221c);
+      border-left: 2px solid rgba(255, 210, 120, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2rem;
-      position: relative;
+      padding: 3rem 2rem 2rem 2rem;
     }
 
     .stats {
-      margin-bottom: auto;
       display: flex;
       flex-direction: column;
-      align-content: center;
-      height: 100%;
       justify-content: space-evenly;
+      height: 100%;
     }
 
     .stats h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      color: #ffe897;
-      text-shadow: 0 0 10px rgba(255, 240, 180, 0.5);
-    }
-
-    .stats p {
-      font-size: 1rem;
-      opacity: 0.95;
-      line-height: 1.6;
-      color: #f5f5f5;
-    }
-
-    .stat-bar {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
       margin-top: 0.5rem;
-      height: 8px;
+      margin-bottom: 1rem;
+      color: #ffd77f;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .description {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #ffd77f;
+      margin-bottom: 1rem;
+    }
+
+    .barras h3 {
+      font-size: 1.2rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      color: #e0e0e0;
+    }
+
+    .barras h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* CORREGIDO: Altura fija para evitar el bug de estiramiento */
+    .stat-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 0.3rem;
+      height: 10px;
       overflow: hidden;
     }
 
     .stat-fill {
       height: 100%;
-      background: linear-gradient(90deg, #ffe897, #fff4d0, #b8e0ff);
+      background: linear-gradient(90deg, #ffd77f, #ffeab8);
+      box-shadow: 0 0 10px rgba(255, 215, 127, 0.5);
     }
 
-    /* ===== Button ===== */
+    /* --- BOTONES (CORREGIDO: Texto blanco con buena lectura) --- */
     .play-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #ffe897, #b8e0ff);
-      color: #0f0f18;
-      box-shadow: 0 0 25px rgba(255, 255, 200, 0.6);
-      animation: pulseGlow 2.5s ease-in-out infinite;
-      transition: all 0.3s ease;
+      margin-top: 1.5rem;
+      background: linear-gradient(45deg, #d4a337, #ffd77f);
+      color: #ffffff;
       border: none;
       padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 4px;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      box-shadow: 0 0 15px rgba(255, 210, 120, 0.5);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .play-btn:hover {
-      box-shadow: 0 0 45px rgba(255, 255, 220, 0.9);
-      transform: scale(1.08);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 210, 120, 0.5);
+      background: linear-gradient(45deg, #ffd77f, #fff1c5);
+      color: #ffffff;
     }
 
     .play-btn:active {
-      transform: scale(0.95);
-    }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 20px rgba(255, 255, 200, 0.3);
-      }
-
-      50% {
-        box-shadow: 0 0 40px rgba(255, 255, 220, 0.8);
-      }
-
-      100% {
-        box-shadow: 0 0 20px rgba(255, 255, 200, 0.3);
-      }
+      transform: scale(0.96);
     }
   </style>
+
+
 </body>
 
 </html>

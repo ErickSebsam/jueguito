@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antagonistas - Selección</title>
   <link rel="stylesheet" href="antagonistas.css">
+
+  <!-- IMPORTACIÓN DE FUENTES TEMÁTICAS (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,20 +28,22 @@
 
   <div class="main">
     <video autoplay muted loop>
-      <source src="../../videos/viego trono.mp4" type="video/mp4">
+      <source src="../../videos/Viego-penta.mp4" type="video/mp4">
       Tu navegador no soporta videos.
     </video>
     <div class="nombre">
-      <img src="../../index_im/viego.png" alt="">
+      <img src="../../index_im/viego.png" alt="Viego">
     </div>
   </div>
 
   <aside class="stats-panel">
     <div class="stats">
-      <h3 style="text-align: center;">El Rey Arruinado</h3>
-      <p>Antaño un monarca desesperado por revivir a su reina muerta, Viego se dejó consumir por la obsesión y la magia
+      <h3>El Rey Arruinado</h3>
+      <p class="description">
+        Antaño un monarca desesperado por revivir a su reina muerta, Viego se dejó consumir por la obsesión y la magia
         negra. Su intento por recuperar el amor perdido desató la Ruina, una niebla corruptora que arrasa con todo a su
-        paso. Ahora vaga por el mundo, buscando un modo de traerla de vuelta, sin importar el costo.</p>
+        paso. Ahora vaga por el mundo, buscando un modo de traerla de vuelta, sin importar el costo.
+      </p>
 
       <div class="barras">
         <h3>Poder</h3>
@@ -66,6 +73,7 @@
     <button class="play-btn">JUGAR</button>
   </aside>
 
+  
   <style>
     * {
       margin: 0;
@@ -76,56 +84,62 @@
     body {
       height: 100vh;
       display: flex;
-      background-color: #020806;
+      background-color: #050102;
       color: white;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rajdhani', sans-serif;
       overflow: hidden;
     }
 
     /* --- SIDEBAR --- */
     .sidebar {
       width: 18%;
-      background: linear-gradient(180deg, #00100b, #003322);
-      border-right: 2px solid rgba(0, 255, 170, 0.2);
+      background: linear-gradient(180deg, #0d0203, #2e0509);
+      border-right: 2px solid rgba(255, 42, 42, 0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem 0;
     }
 
     .sidebar h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #00ffb3;
-      text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+      letter-spacing: 3px;
+      color: #ff3b3b;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     .char-list {
       display: flex;
       flex-direction: column;
-      gap: 5.2rem;
+      gap: 3.5rem;
       width: 100%;
       align-items: center;
     }
 
     .char {
       width: 80%;
-      background: rgba(0, 255, 150, 0.08);
-      background-color: #0c3a2a;
-      padding: 25px 0;
+      background-color: #1a0507;
+      padding: 18px 0;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 500;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #ccffe8;
+      color: #ff3b3b;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .btonperso {
@@ -135,9 +149,11 @@
     }
 
     .char:hover {
-      background: rgba(0, 255, 150, 0.25);
+      background: rgba(255, 42, 42, 0.3);
       transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+      box-shadow: 0 0 15px rgba(255, 60, 0, 0.6);
+      border-color: #ff3b3b;
+      color: #ffffff;
     }
 
     /* --- MAIN --- */
@@ -146,16 +162,16 @@
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: end;
+      align-items: flex-end;
       overflow: hidden;
     }
 
-    .main video {
+    .main video, .main .bg-hero {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.7) contrast(1.1) saturate(1.2);
+      filter: brightness(0.8) contrast(1.1) saturate(1.1);
     }
 
     .nombre {
@@ -164,19 +180,19 @@
 
     .nombre img {
       width: 750px;
-      height: 300px;
-      filter: drop-shadow(0 0 25px rgba(0, 255, 150, 0.7));
+      height: 400px;
+      filter: drop-shadow(0 0 25px rgba(255, 60, 0, 0.6));
     }
 
     /* --- STATS PANEL --- */
     .stats-panel {
       width: 25%;
-      background: linear-gradient(180deg, #001d14, #003326);
-      border-left: 2px solid rgba(0, 255, 150, 0.2);
+      background: linear-gradient(180deg, #120304, #33070b);
+      border-left: 2px solid rgba(255, 42, 42, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2rem;
+      padding: 3rem 2rem 2rem 2rem;
     }
 
     .stats {
@@ -187,59 +203,92 @@
     }
 
     .stats h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      color: #00ffb3;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      color: #ff3b3b;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
-    .stats p {
-      font-size: 1rem;
-      opacity: 0.85;
+    .description {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
       line-height: 1.5;
-      color: #b9ffe4;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #ff3b3b;
+      margin-bottom: 1rem;
     }
 
+    .barras h3 {
+      font-size: 1.2rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      color: #e0e0e0;
+    }
+
+    .barras h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* CORREGIDO: Altura fija para evitar el bug de estiramiento */
     .stat-bar {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
-      margin-top: 0.5rem;
-      height: 8px;
+      margin-top: 0.3rem;
+      height: 10px;
       overflow: hidden;
     }
 
     .stat-fill {
       height: 100%;
-      background: linear-gradient(90deg, #00ffb3, #00cc88);
-      box-shadow: 0 0 10px rgba(0, 255, 150, 0.6);
+      background: linear-gradient(90deg, #ff003c, #ffae00);
+      box-shadow: 0 0 10px rgba(255, 60, 0, 0.6);
     }
 
-    /* --- BOTONES --- */
+    /* --- BOTONES (CORREGIDO: Texto blanco con buena lectura) --- */
     .play-btn {
-      margin-top: 2rem;
-      background: linear-gradient(45deg, #00ffb3, #00cc88);
-      color: #fff;
+      margin-top: 1.5rem;
+      background: linear-gradient(45deg, #ff003c, #ff8c00);
+      color: #ffffff;
       border: none;
       padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 4px;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 15px rgba(0, 255, 170, 0.6);
-      transition: all 0.4s ease;
+      letter-spacing: 2px;
+      box-shadow: 0 0 15px rgba(255, 50, 0, 0.6);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .play-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 30px rgba(0, 255, 200, 0.9);
-      background: linear-gradient(45deg, #00ffa6, #00ffcc);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 50, 0, 0.6);
+      background: linear-gradient(45deg, #ff1a40, #ffae00);
+      color: #ffffff;
     }
 
     .play-btn:active {
-      transform: scale(0.95);
+      transform: scale(0.96);
     }
   </style>
+
 </body>
 
 </html>

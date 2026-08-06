@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Antagonistas - Selección</title>
   <link rel="stylesheet" href="antagonistas.css">
+
+  <!-- IMPORTACIÓN DE FUENTES TEMÁTICAS (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,7 +40,7 @@
   <aside class="stats-panel">
     <div class="stats">
       <h3 style="text-align: center;">El Maestro de las Sombras</h3>
-      <p>Zed es un asesino despiadado que domina el arte prohibido de las sombras. Tras ser consumido por su ambición de
+      <p class="description">Zed es un asesino despiadado que domina el arte prohibido de las sombras. Tras ser consumido por su ambición de
         proteger Jonia, fundó la Orden de la Sombra para eliminar sin piedad todo lo que amenace su tierra. Se mueve
         entre la oscuridad con velocidad mortal, atacando antes de que su víctima pueda siquiera reaccionar.</p>
       <div class="barras">
@@ -62,6 +68,8 @@
 
     <button class="play-btn">JUGAR</button>
   </aside>
+  
+  
   <style>
     * {
       margin: 0;
@@ -72,57 +80,62 @@
     body {
       height: 100vh;
       display: flex;
-      background-color: #0a0a0f;
+      background-color: #050508;
       color: white;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Rajdhani', sans-serif;
       overflow: hidden;
     }
 
-
+    /* --- SIDEBAR --- */
     .sidebar {
       width: 18%;
-      background: linear-gradient(180deg, #120101, #2b0000);
-      border-right: 2px solid rgba(255, 0, 0, 0.2);
+      background: linear-gradient(180deg, #0a0a0f, #1c0509);
+      border-right: 2px solid rgba(255, 42, 42, 0.25);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
-      padding: 2rem 0;
-      overflow-y: auto;
       justify-content: space-between;
+      padding: 3rem 0 2rem 0;
     }
 
     .sidebar h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #ff4b4b;
-      text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      letter-spacing: 3px;
+      color: #e6b800;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     .char-list {
       display: flex;
       flex-direction: column;
-      gap: 5.2rem;
+      gap: 3.5rem;
       width: 100%;
       align-items: center;
     }
 
     .char {
       width: 80%;
-      background: rgba(255, 0, 0, 0.08);
-      background-color: #6a1313;
-      padding: 25px 0;
+      background-color: #18070a;
+      padding: 18px 0;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 500;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #e6b800;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .btonperso {
@@ -132,107 +145,29 @@
     }
 
     .char:hover {
-      background: rgba(255, 0, 0, 0.25);
+      background: rgba(255, 42, 42, 0.3);
       transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 0 15px rgba(255, 42, 42, 0.5);
+      border-color: #e6b800;
+      color: #ffffff;
     }
 
+    /* --- MAIN --- */
     .main {
       flex: 1;
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: end;
+      align-items: flex-end;
       overflow: hidden;
     }
 
-    .main video {
+    .main video, .main .bg-hero {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.7) contrast(1.1);
-    }
-
-    .main h1 {
-      position: relative;
-      z-index: 2;
-      font-size: 3rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    }
-
-
-    .stats-panel {
-      width: 25%;
-      background: linear-gradient(180deg, #1a0000, #2e0000);
-      border-left: 2px solid rgba(255, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .stats {
-      margin-bottom: auto;
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      height: 100%;
-      justify-content: space-evenly;
-    }
-
-    .stats h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      color: #ff4b4b;
-    }
-
-    .stats p {
-      font-size: 1rem;
-      opacity: 0.85;
-      line-height: 1.5;
-    }
-
-    .stat-bar {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      margin-top: 0.5rem;
-      height: 8px;
-      overflow: hidden;
-    }
-
-    .stat-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #ff0000, #ff4b1f);
-    }
-
-    .play-btn {
-      margin-top: 2rem;
-      background: linear-gradient(45deg, #ff0000, #ff4b1f);
-      color: #fff;
-      border: none;
-      padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
-      transition: all 0.4s ease;
-    }
-
-    .play-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 30px rgba(255, 80, 80, 0.9);
-      background: linear-gradient(45deg, #ff2b2b, #ff6a3d);
-    }
-
-    .play-btn:active {
-      transform: scale(0.95);
+      filter: brightness(0.8) contrast(1.1) saturate(1.1);
     }
 
     .nombre {
@@ -242,8 +177,115 @@
     .nombre img {
       width: 750px;
       height: 300px;
+      filter: drop-shadow(0 0 25px rgba(255, 42, 42, 0.5));
+    }
+
+    /* --- STATS PANEL --- */
+    .stats-panel {
+      width: 25%;
+      background: linear-gradient(180deg, #0c080e, #21080d);
+      border-left: 2px solid rgba(255, 42, 42, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 2rem 2rem 2rem;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+    .stats h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      color: #e6b800;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .description {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #ff2a2a;
+      margin-bottom: 1rem;
+    }
+
+    .barras h3 {
+      font-size: 1.2rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      color: #e0e0e0;
+    }
+
+    .barras h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* CORREGIDO: Altura fija para evitar el bug de estiramiento */
+    .stat-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 0.3rem;
+      height: 10px;
+      overflow: hidden;
+    }
+
+    .stat-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #cc0000, #ff4d4d);
+      box-shadow: 0 0 10px rgba(255, 42, 42, 0.5);
+    }
+
+    /* --- BOTONES (CORREGIDO: Texto blanco con buena lectura) --- */
+    .play-btn {
+      margin-top: 1.5rem;
+      background: linear-gradient(45deg, #990000, #e60000);
+      color: #ffffff;
+      border: none;
+      padding: 14px 40px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+      background: linear-gradient(45deg, #cc0000, #ff3333);
+      color: #ffffff;
+    }
+
+    .play-btn:active {
+      transform: scale(0.96);
     }
   </style>
+
+
 </body>
 
 </html>

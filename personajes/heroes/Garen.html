@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Héroes - Selección</title>
   <link rel="stylesheet" href="antagonistas.css">
+
+  <!-- IMPORTACIÓN DE FUENTES TEMÁTICAS (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,7 +40,7 @@
   <aside class="stats-panel">
     <div class="stats">
       <h3 style="text-align: center;">El Poder de Demacia</h3>
-      <p>Garen es un orgulloso guerrero de la élite demaciana y miembro de la legendaria Guardia Real. Con una voluntad
+      <p class="description">Garen es un orgulloso guerrero de la élite demaciana y miembro de la legendaria Guardia Real. Con una voluntad
         inquebrantable y una armadura que simboliza la justicia, lucha para proteger a su reino del caos y la magia
         prohibida. Su espada es tan implacable como sus convicciones, y aquellos que se opongan a Demacia conocerán su
         juicio final.</p>
@@ -64,6 +70,8 @@
     <button class="play-btn">JUGAR</button>
   </aside>
 
+  
+  
   <style>
     * {
       margin: 0;
@@ -74,55 +82,62 @@
     body {
       height: 100vh;
       display: flex;
-      background-color: #0b0910;
-      color: #e6e6e6;
-      font-family: 'Poppins', sans-serif;
+      background-color: #071025;
+      color: white;
+      font-family: 'Rajdhani', sans-serif;
       overflow: hidden;
     }
 
+    /* --- SIDEBAR --- */
     .sidebar {
       width: 18%;
-      background: linear-gradient(180deg, #0d0a11, #1c1526);
-      border-right: 2px solid rgba(180, 160, 255, 0.15);
+      background: linear-gradient(180deg, #08163d, #06204f);
+      border-right: 2px solid rgba(100, 170, 255, 0.2);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 2rem 0;
+      padding: 3rem 0 2rem 0;
     }
 
     .sidebar h2 {
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #c5a6ff;
-      text-shadow: 0 0 10px rgba(197, 166, 255, 0.4);
+      letter-spacing: 3px;
+      color: #80b8ff;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
     }
 
     .char-list {
       display: flex;
       flex-direction: column;
-      gap: 5.2rem;
+      gap: 3.5rem;
       width: 100%;
       align-items: center;
     }
 
     .char {
       width: 80%;
-      background: rgba(197, 166, 255, 0.08);
-      background-color: #372a4e;
-      padding: 25px 0;
+      background-color: #17335e;
+      padding: 18px 0;
       text-align: center;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 500;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #e6e0ff;
+      color: #80b8ff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .btonperso {
@@ -132,120 +147,147 @@
     }
 
     .char:hover {
-      background: rgba(201, 179, 111, 0.25);
-      box-shadow: 0 0 15px rgba(240, 220, 154, 0.6);
-      color: #f0dc9a;
-      text-shadow: 0 0 10px rgba(240, 220, 154, 0.6);
+      background: rgba(100, 170, 255, 0.25);
       transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(100, 170, 255, 0.5);
+      border-color: #80b8ff;
+      color: #ffffff;
     }
 
+    /* --- MAIN --- */
     .main {
       flex: 1;
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: end;
+      align-items: flex-end;
       overflow: hidden;
     }
 
-    .main video {
+    .main video, .main .bg-hero {
       position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.7) contrast(1.1);
+      filter: brightness(0.8) contrast(1.1) saturate(1.1);
     }
-    .nombre{
+
+    .nombre {
       z-index: 1;
     }
 
+    .nombre img {
+      width: 750px;
+      height: 300px;
+      filter: drop-shadow(0 0 25px rgba(100, 170, 255, 0.5));
+    }
+
+    /* --- STATS PANEL --- */
     .stats-panel {
       width: 25%;
-      background: linear-gradient(180deg, #151020, #251d36);
-      border-left: 2px solid rgba(180, 160, 255, 0.15);
+      background: linear-gradient(180deg, #081a3b, #0f305c);
+      border-left: 2px solid rgba(100, 170, 255, 0.2);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2rem;
-      position: relative;
+      padding: 3rem 2rem 2rem 2rem;
     }
 
     .stats {
-      margin-bottom: auto;
       display: flex;
       flex-direction: column;
-      align-content: center;
-      height: 100%;
       justify-content: space-evenly;
+      height: 100%;
     }
 
     .stats h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-      color: #c9b36f;
-    }
-
-    .stats p {
-      font-size: 1rem;
-      opacity: 0.9;
-      line-height: 1.5;
-      color: #e6e6e6;
-    }
-
-    .stat-bar {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
       margin-top: 0.5rem;
-      height: 8px;
+      margin-bottom: 1rem;
+      color: #80b8ff;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .description {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #80b8ff;
+      margin-bottom: 1rem;
+    }
+
+    .barras h3 {
+      font-size: 1.2rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      color: #e0e0e0;
+    }
+
+    .barras h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    /* CORREGIDO: Altura fija para evitar el bug de estiramiento */
+    .stat-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 0.3rem;
+      height: 10px;
       overflow: hidden;
     }
 
     .stat-fill {
       height: 100%;
-      background: linear-gradient(90deg, #c9b36f, #f0dc9a);
+      background: linear-gradient(90deg, #4a8bff, #7fbfff);
+      box-shadow: 0 0 10px rgba(100, 170, 255, 0.5);
     }
 
+    /* --- BOTONES (CORREGIDO: Texto blanco con buena lectura) --- */
     .play-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #c9b36f, #f0dc9a);
-      color: #1c1526;
-      box-shadow: 0 0 25px rgba(240, 220, 154, 0.5);
-      animation: pulseGlow 2.5s ease-in-out infinite;
-      transition: all 0.3s ease;
+      margin-top: 1.5rem;
+      background: linear-gradient(45deg, #2562d9, #4a8bff);
+      color: #ffffff;
       border: none;
       padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 4px;
       cursor: pointer;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      box-shadow: 0 0 15px rgba(100, 170, 255, 0.5);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .play-btn:hover {
-      box-shadow: 0 0 45px rgba(240, 220, 154, 0.9);
-      background: linear-gradient(45deg, #f0dc9a, #fff1c5);
-      transform: scale(1.08);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(100, 170, 255, 0.5);
+      background: linear-gradient(45deg, #4a8bff, #80b8ff);
+      color: #ffffff;
     }
 
     .play-btn:active {
-      transform: scale(0.95);
-    }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 20px rgba(240, 220, 154, 0.4);
-      }
-
-      50% {
-        box-shadow: 0 0 45px rgba(240, 220, 154, 0.8);
-      }
-
-      100% {
-        box-shadow: 0 0 20px rgba(240, 220, 154, 0.4);
-      }
+      transform: scale(0.96);
     }
   </style>
+
+
 </body>
 
 </html>
